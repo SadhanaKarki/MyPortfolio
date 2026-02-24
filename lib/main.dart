@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Sadhana Karki',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: const HomePage() ,
+      home: const HomePage(),
         
     );
   }
