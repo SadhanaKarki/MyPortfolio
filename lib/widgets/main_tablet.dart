@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 
 class MainTablet extends StatelessWidget {
-  const MainTablet({super.key});
+  final VoidCallback? onGetInTouchTap;
+  
+  const MainTablet({super.key, this.onGetInTouchTap});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class MainTablet extends StatelessWidget {
                   SizedBox(
                     width: 215,
                     child: ElevatedButton(
-                      onPressed: (){},
+                      onPressed: onGetInTouchTap,
                       child: const Text("Get in touch"),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColor.yellowPrimary,

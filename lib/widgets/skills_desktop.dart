@@ -7,90 +7,101 @@ class SkillsDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final screenSize = MediaQuery.of(context).size;
-   final screenWidth = screenSize.width;
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
     
-    return  Container(
-            width: screenWidth,
-            padding: EdgeInsets.fromLTRB(25, 18, 25, 60),
-            color: CustomColor.bgLight1,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+    return Container(
+      width: screenWidth,
+      padding: const EdgeInsets.fromLTRB(25, 40, 25, 60),
+      color: CustomColor.bgLight1,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          //Title
+          const Text(
+            "My Skills",
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+              color: CustomColor.whitePrimary,
+            ),
+          ),
+          const SizedBox(height: 30),
+          
+          //Skills Grid
+          ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 1000),
+            child: Wrap(
+              spacing: 20,
+              runSpacing: 20,
+              alignment: WrapAlignment.center,
               children: [
-                //Title
-                const Text("My Skills",style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: CustomColor.whitePrimary),
-                  ),
-                SizedBox(height: 20,),
-                //platforms and skills
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //platform
-                    ConstrainedBox(                  //we can give wrap a required sizes
-                      constraints: BoxConstraints(
-                        maxWidth: 450,
-                      ),
-                      child: Wrap(
-                        spacing: 5,      //for vertical spacing
-                        runSpacing: 5,    //for horizontalspacing between boxes
-                        children: [
-                          for (int i=0; i<platformItems.length;i++)
-                          Container(
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: CustomColor.bgLight2,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: ListTile(
-                              contentPadding: EdgeInsets.symmetric(horizontal:20 ,vertical: 10),
-                              leading: Image.asset(platformItems[i]["img"],width: 27,),
-                              title: Text(platformItems[i]["title"]),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 60,),
-
-                    //skills
-                    Wrap(
-                      children: [
-                      ConstrainedBox(                  //we can give wrap a required sizes
-                      constraints: BoxConstraints(
-                        maxWidth: 450,
-                      ),
-                      child: Wrap(
-                        spacing: 5,      //for vertical spacing
-                        runSpacing: 5,    //for horizontalspacing between boxes
-                        children: [
-                          for (int i=0; i<skillsItems.length;i++)
-                          Container(
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: CustomColor.bgLight2,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: ListTile(
-                              contentPadding: EdgeInsets.symmetric(horizontal:20 ,vertical: 10),
-                              leading: Image.asset(skillsItems[i]["img"],width: 27,),
-                              title: Text(skillsItems[i]["title"]),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                      ],
+                for (int i = 0; i < skillsItems.length; i++)
+                  if (skillsItems[i]['img'] != null && skillsItems[i]['title'] != null)
+                    _SkillCard(
+                      imagePath: skillsItems[i]['img'] as String,
+                      title: skillsItems[i]['title'] as String,
                     )
-
-                  ],
-                )
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
-          );
+class _SkillCard extends StatefulWidget {
+  final String imagePath;
+  final String title;
+
+  const _SkillCard({
+    required this.imagePath,
+    required this.title,
+  });
+
+  @override
+  State<_SkillCard> createState() => _SkillCardState();
+}
+
+class _SkillCardState extends State<_SkillCard> {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => isHovered = true),
+      onExit: (_) => setState(() => isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        width: 220,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: isHovered ? CustomColor.yellowPrimary : CustomColor.bgLight2,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: isHovered ? CustomColor.yellowSecondary : Colors.transparent,
+            width: 2,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(widget.imagePath, width: 50, height: 50),
+            const SizedBox(height: 15),
+            Text(
+              widget.title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: isHovered ? Colors.black : CustomColor.whitePrimary,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

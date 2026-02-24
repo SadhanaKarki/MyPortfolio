@@ -7,31 +7,26 @@ class HeaderMobile extends StatelessWidget {
   final VoidCallback? onLogoTap;
   final VoidCallback? onMenuTap;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
-          height: 50,
-          margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-          decoration:  BoxDecoration(
-              gradient: const LinearGradient(
-                colors:[
-                   Colors.transparent,
-                   CustomColor.bgLight1]
-                   ),
-              borderRadius: BorderRadius.circular(100)
-            ),
-          child: Row(
-            children: [
-              SiteLogo(onTap: onLogoTap),
-              const Spacer(),
-              IconButton(
-                onPressed: onMenuTap, 
-                icon:const Icon(Icons.menu),),
-                const SizedBox(width: 15)
-            ],
+      height: 50,
+      margin: const EdgeInsets.fromLTRB(30, 30, 20, 5),
+      decoration: BoxDecoration(
+          gradient: const LinearGradient(
+              colors: [Colors.transparent, CustomColor.bgLight1]),
+          borderRadius: BorderRadius.circular(100)),
+      child: Row(
+        children: [
+          SiteLogo(onTap: onLogoTap),
+          const Spacer(),
+          IconButton(
+            onPressed: onMenuTap,
+            icon: const Icon(Icons.menu),
           ),
-
-         );
+          const SizedBox(width: 15)
+        ],
+      ),
+    );
   }
 }
