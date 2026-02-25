@@ -27,7 +27,7 @@ class ProjectsMobile extends StatelessWidget {
               color: CustomColor.whitePrimary,
             ),
           ),
-          //const SizedBox(height: 5),
+          const SizedBox(height: 5),
 
           //Projects List
           ListView.builder(
