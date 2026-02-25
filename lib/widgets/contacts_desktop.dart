@@ -52,7 +52,7 @@ class _ContactsDesktopState extends State<ContactsDesktop> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 40, 25, 60),
-      color: CustomColor.bgLight1,
+      color: CustomColor.scaffoldBg,
       width: double.maxFinite,
       child: Column(
         children: [
@@ -62,6 +62,16 @@ class _ContactsDesktopState extends State<ContactsDesktop> {
               fontSize: 32,
               fontWeight: FontWeight.bold,
               color: CustomColor.whitePrimary,
+            ),
+          ),
+            const SizedBox(height: 8),
+          // Accent underline
+          Container(
+            width: 70,
+            height: 4,
+            decoration: BoxDecoration(
+              color: CustomColor.yellowPrimary,
+              borderRadius: BorderRadius.circular(2),
             ),
           ),
           const SizedBox(height: 30),

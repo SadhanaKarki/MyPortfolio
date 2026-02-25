@@ -30,11 +30,10 @@ class AboutTablet extends StatelessWidget {
           //About Content
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 800),
-            child: Column(
+            child: const Column(
               children: [
-                const Text(
-                  "Hello! I'm a passionate Mobile and Web Developer with a strong foundation in creating innovative solutions. "
-                  "With expertise in Flutter, Dart, and modern web technologies, I build responsive and user-friendly applications.",
+                 Text(
+                  "Hello! I'm a passionate Flutter Developer with hands-on experience in building scalable, user-friendly mobile applications. Skilled in translating ideas into practical solutions using Flutter, and modern state management techniques. A quick learner and highly motivated individual eager to contribute to real-world projects and continuously grow in mobile app development.",
                   style: TextStyle(
                     fontSize: 15,
                     color: CustomColor.WhiteSecondary,
@@ -42,7 +41,7 @@ class AboutTablet extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: 20),
                 Wrap(
                   spacing: 15,
                   runSpacing: 15,
@@ -51,30 +50,22 @@ class AboutTablet extends StatelessWidget {
                     _AboutCardTablet(
                       icon: Icons.code,
                       title: "Clean Code",
-                      description: "Maintainable and efficient code.",
+                      description: "Maintainable code",
                     ),
                     _AboutCardTablet(
                       icon: Icons.design_services,
                       title: "UI/UX Focus",
-                      description: "Beautiful user interfaces.",
+                      description: "Beautiful interfaces",
                     ),
                     _AboutCardTablet(
                       icon: Icons.speed,
                       title: "Performance",
-                      description: "Speed and efficiency optimized.",
+                      description: "Optimized speed",
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const Text(
-                  "Always eager to learn and collaborate to create exceptional digital experiences.",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: CustomColor.WhiteSecondary,
-                    height: 1.7,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                 SizedBox(height: 20),
+                
               ],
             ),
           ),

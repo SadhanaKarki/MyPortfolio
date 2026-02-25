@@ -24,6 +24,15 @@ const List<Map<String, String>> projectsItems = [
     "technologies": "Flutter, Drift, Provider"
   },
   {
+    "title": "EMI Calculator SDK",
+    "description":
+        "Built a reusable, pluggable, pure Dart Flutter SDK for EMI calculation with accurate financial logic, zero-interest handling, and detailed monthly payment breakdown generation.",
+    "image": "assets/flutter_icon.png",
+    "url": "https://github.com/SadhanaKarki/easy_emi_flutter_sdk",
+    "technologies": "Dart, Flutter"
+  },
+  
+  {
     "title": "RKS Medical Services App",
     "description": "Contributed toRKS Medical Services App which is a healthcare platform providing organized medical services in Nepal and internationally. It enables users to book lab tests, order medicines, consult doctors via call, access test results, and enroll in RKS nursing exam preparation courses.",
     "image": "assets/flutter_icon.png",

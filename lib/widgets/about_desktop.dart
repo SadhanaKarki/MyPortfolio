@@ -29,12 +29,11 @@ class AboutDesktop extends StatelessWidget {
 
           //About Content
           ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 900),
-            child: Column(
+            constraints: const BoxConstraints(maxWidth: 900),
+            child: const Column(
               children: [
-                const Text(
-                  "Hello! I'm a passionate Mobile and Web Developer with a strong foundation in creating innovative solutions. "
-                  "With expertise in Flutter, Dart, and modern web technologies, I build responsive and user-friendly applications that solve real-world problems.",
+                 Text(
+                  "Hello! I'm a passionate Flutter Developer with hands-on experience in building scalable, user-friendly mobile applications. Skilled in translating ideas into practical solutions using Flutter, and modern state management techniques. A quick learner and highly motivated individual eager to contribute to real-world projects and continuously grow in mobile app development.",
                   style: TextStyle(
                     fontSize: 16,
                     color: CustomColor.WhiteSecondary,
@@ -42,7 +41,7 @@ class AboutDesktop extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -63,10 +62,10 @@ class AboutDesktop extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 25),
-                const Text(
+                 SizedBox(height: 25),
+                 Text(
                   "I'm always eager to learn new technologies and collaborate with teams to create exceptional digital experiences. "
-                  "When I'm not coding, you can find me exploring new frameworks or contributing to open-source projects.",
+                  ,
                   style: TextStyle(
                     fontSize: 16,
                     color: CustomColor.WhiteSecondary,
